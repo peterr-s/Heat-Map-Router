@@ -84,7 +84,7 @@ public class Main
 			Point temp = toSearch.poll();
 			
 			// DEBUG: show route and length
-			//System.out.println(toSearch.size() + "\n\t[" + temp.toString() + "]: " + temp.getScore());
+			System.out.println(toSearch.size() + "\n\t[" + temp.toString() + "]: " + temp.getScore());
 			
 			// for each combination of x and y offsets
 			for(int i = -1; i <= 1; i++)
@@ -127,7 +127,7 @@ public class Main
 						}
 					}
 					// else if it's the new best entry point save it as such
-					else if(bestEntryPoint == null || bestEntryPoint.getScore() > nPoint.getScore())
+					else if(bestEntryPoint == null || bestEntryPoint.getScore() < nPoint.getScore())
 					{
 						bestEntryPoint = nPoint; // if its score changes it'll only be for the better; no need to make a copy
 						System.out.println("NEW BEST\n\t[" + bestEntryPoint.toString() + "]: " + bestEntryPoint.getScore());
